@@ -1,6 +1,6 @@
 package com.example.course_work25;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface EmployeeService {
     Employee addEmployee(String firstName, String lastName);
@@ -9,5 +9,5 @@ public interface EmployeeService {
 
     Employee getEmployee(String firstName, String lastName);
 
-    List<Employee> getAllEmployees();
+    Collection<Employee> getAllEmployees();
 }

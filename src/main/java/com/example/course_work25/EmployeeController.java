@@ -3,7 +3,7 @@ package com.example.course_work25;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/employee")
@@ -30,7 +30,7 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/list")
-    public List<Employee> listEmployee() {
+    public Collection<Employee> listEmployee() {
         return employeeService.getAllEmployees();
     }
 }
