@@ -13,7 +13,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     Map<String, Employee> employees = new HashMap<>();
 
 
-    public Employee addEmployee(String firstName, String lastName) {
+    public Employee addEmployee(String firstName, String lastName, int salary, String department) {
         Employee employee = null;
         try {
             if (getEmployee(firstName, lastName) != null) {
@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             }
         } catch (EmployeeNotFoundException e) {
             if (employees.size() < max) {
-                employee = new Employee(firstName, lastName);
+                employee = new Employee(firstName, lastName, salary, department);
                 employees.put(firstName + " " + lastName, employee);
             } else {
                 throw new EmployeeStorageIsFullException("Места нет");
