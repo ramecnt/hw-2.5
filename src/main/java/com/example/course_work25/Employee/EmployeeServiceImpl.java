@@ -1,4 +1,4 @@
-package com.example.course_work25;
+package com.example.course_work25.Employee;
 
 import com.example.course_work25.exceptions.EmployeeAlreadyAddedException;
 import com.example.course_work25.exceptions.EmployeeNotFoundException;
@@ -47,7 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
-    public Collection<Employee> getAllEmployees() {
-        return employees.values();
-    }
+    public Collection<Employee> getAllEmployees() { return employees.values(); }
+
+    public Map<String, Employee> getAllEmployeesMap() { return employees; }
 }

@@ -1,6 +1,7 @@
-package com.example.course_work25;
+package com.example.course_work25.Employee;
 
 import java.util.Collection;
+import java.util.Map;
 
 public interface EmployeeService {
     Employee addEmployee(String firstName, String lastName, int salary, String department);
@@ -10,4 +11,6 @@ public interface EmployeeService {
     Employee getEmployee(String firstName, String lastName);
 
     Collection<Employee> getAllEmployees();
+
+    Map<String, Employee> getAllEmployeesMap();
 }
