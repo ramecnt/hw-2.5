@@ -1,15 +1,18 @@
-package com.example.course_work25;
+package com.example.course_work25.Department.Old;
 
+import com.example.course_work25.Employee.Employee;
+import com.example.course_work25.Employee.EmployeeService;
+import com.example.course_work25.exceptions.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class DepartmentServiceImpl implements DepartmentService {
+public class DepartmentServiceOldImpl implements DepartmentServiceOld {
     private final EmployeeService employeeService;
 
-    public DepartmentServiceImpl(EmployeeService employeeService) {
+    public DepartmentServiceOldImpl(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -32,7 +35,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .stream()
                 .filter(e -> Objects.equals(e.getDepartment(), department))
                 .max(Comparator.comparingInt(Employee::getSalary))
-                .orElseThrow();
+                .orElseThrow(() -> new EmployeeNotFoundException(")"));
     }
 
     public Employee getMinSalary(String department) {
@@ -40,6 +43,6 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .stream()
                 .filter(e -> Objects.equals(e.getDepartment(), department))
                 .min(Comparator.comparingInt(Employee::getSalary))
-                .orElseThrow();
+                .orElseThrow(() -> new EmployeeNotFoundException(")"));
     }
 }

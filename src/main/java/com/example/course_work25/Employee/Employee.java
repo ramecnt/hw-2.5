@@ -1,4 +1,4 @@
-package com.example.course_work25;
+package com.example.course_work25.Employee;
 
 public class Employee {
     private final String firstName;
